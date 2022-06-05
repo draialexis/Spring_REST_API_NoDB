@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-@Repository("fromJSON")
+@Repository("personDao")
 public class PersonDao implements PersonAccessible {
 
     private final Logger       logger       = LogManager.getLogger(PersonDao.class);

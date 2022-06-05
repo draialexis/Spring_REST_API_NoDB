@@ -1,6 +1,6 @@
 package com.safetynet.safetynetalerts.service;
 
-import com.safetynet.safetynetalerts.dao.PersonDao;
+import com.safetynet.safetynetalerts.dao.PersonAccessible;
 import com.safetynet.safetynetalerts.model.PersonModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,32 +10,32 @@ import java.util.List;
 
 @Service
 public class PersonService {
-    private final PersonDao personDao;
+    private final PersonAccessible personAccessible;
 
     @Autowired
-    public PersonService(@Qualifier("fromJSON") PersonDao personDao) {
-        this.personDao = personDao;
+    public PersonService(@Qualifier("personDao") PersonAccessible personAccessible) {
+        this.personAccessible = personAccessible;
     }
 
     public PersonModel addPerson(PersonModel person) {
-        return personDao.insertPerson(person);
+        return personAccessible.insertPerson(person);
     }
 
     public List<PersonModel> getAllPersons() {
-        return personDao.selectAllPersons();
+        return personAccessible.selectAllPersons();
     }
 
     public PersonModel getPerson(String firstName, String lastName)
     {
-        return personDao.selectPerson(firstName, lastName);
+        return personAccessible.selectPerson(firstName, lastName);
     }
 
     public PersonModel updatePerson(String firstName, String lastName, PersonModel newPerson) {
-        return personDao.updatePerson(firstName, lastName, newPerson);
+        return personAccessible.updatePerson(firstName, lastName, newPerson);
     }
 
     public void deletePerson(String firstName, String lastName)
     {
-        personDao.deletePerson(firstName, lastName);
+        personAccessible.deletePerson(firstName, lastName);
     }
 }

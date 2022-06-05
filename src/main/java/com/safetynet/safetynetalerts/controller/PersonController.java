@@ -24,14 +24,14 @@ public class PersonController {
         personService.addPerson(person);
     }
 
-    // TODO remove before prod
+    // TODO remove before prod or make private
     @GetMapping
     public List<PersonModel> getAllPersons()
     {
         return personService.getAllPersons();
     }
 
-    // TODO remove before prod
+    // TODO remove before prod or make private
     @GetMapping(path = "{firstName}_{lastName}")
     public PersonModel getPerson(
             @PathVariable("firstName") String firstName,
