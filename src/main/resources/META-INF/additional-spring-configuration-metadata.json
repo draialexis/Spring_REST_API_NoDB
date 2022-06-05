@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "app.realpath",
+      "type": "java.lang.String",
+      "description": "The dev version of the app data.",
+      "sourceType": "com.safetynet.safetynetalerts.util.CustomProperties",
+      "defaultValue": "testing testing 1 2"
+    },
+    {
+      "name": "app.testpath",
+      "type": "java.lang.String",
+      "description": "The dev TEST version of the app data.",
+      "sourceType": "com.safetynet.safetynetalerts.util.CustomProperties"
+    },
+    {
+      "name": "app.environment",
+      "type": "java.lang.String",
+      "description": "The app environment.",
+      "sourceType": "com.safetynet.safetynetalerts.util.CustomProperties"
+    }
+  ]
+}
