@@ -43,7 +43,7 @@ public class PersonDao implements PersonAccessible {
         } catch (ParseException | IOException e) {
             logger.error("Error while reading database file." + e);
         }
-
+// TODO trouver un moyen d'extraire une liste de personnes d'un JSON qui contient d'autres listes
         return null;
     }
 
